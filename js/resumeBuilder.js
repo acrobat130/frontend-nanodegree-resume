@@ -107,7 +107,7 @@ var work = {
 		"title": "Acoustical Consultant",
 		"employer": "Charles M. Salter Associates",
 		"employerURL": "http://www.cmsalter.com",
-		"location": "San Francisco & San Jose, CA",
+		"location": "San Francisco, CA",
 		"dates": "2012-present",
 		"description": "I design room acoustics, sound isolation, and mechanical/electrical/plumbing noise and vibration in buildings. I conduct acoustical testing and measurements to quantify interior and exterior noise environments and to determine if acoustical design goals are met. I provide written reports with recommendations for all testing, measurements, and drawing/specification reviews. I manage up to 20 projects simultaneously and generate over $250,000 in revenue annually. Project types include recording studios, music buildings, corporate interiors, multi-family residential, office towers, luxury residences, fitness centers, retail spaces, restaurants, and mechanical enclsures. I interface directly with clients, including Gensler, Swinerton Builders, Google, and other architects, developers, contracters, and owners."
 	},
