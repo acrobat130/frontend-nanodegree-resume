@@ -229,6 +229,7 @@ function initializeMap() {
   // the locations array
   pinPoster(locations);
 
+  console.log(locations);
 }
 
 /*
