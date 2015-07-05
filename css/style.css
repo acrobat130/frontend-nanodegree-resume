@@ -8,7 +8,7 @@
   overflow: auto;
 }
 
-.education-entry, .work-entry, .project-entry, .online-education-entry, .project-images-entry {
+.education-entry, .work-entry, .online-education-entry, .project-images-entry {
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -233,7 +233,7 @@ span {
   max-width: 500px;
 }
 */
-
+/*
 .columns-for-images {
   width: 50%;
   display: inline-block;
@@ -248,7 +248,7 @@ span {
 .columns-for-images:nth-of-type(4) {
   margin-bottom: 50px;
 }
-
+*/
 #workExperience, #projects, #education, #online-education, #mapDiv {
   padding-top: 50px;
 }
@@ -300,6 +300,40 @@ span {
   padding-left: 0;
 }
 
+.project-entry {
+  padding-left: 4.4%;
+  padding-right: 4.4%;
+}
 
+.project-entry >a, .project-entry >.date-text, .project-entry>p {
+  padding-left: .6%;
+  padding-right: .6%;
+}
 
+.project-entry >.columns-for-images {
+  width: 50%;
+  display: inline-block;
+  max-width: 500px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: .6%;
+  margin: 0;
+}
+
+/*
+.columns-for-images {
+  width: 50%;
+  display: inline-block;
+  margin: 0px;
+  padding: 5px;
+  max-width: 500px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*/
+.columns-for-images:nth-of-type(4) {
+  margin-bottom: 50px;
+}
 
