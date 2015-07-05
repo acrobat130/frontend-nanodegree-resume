@@ -15,23 +15,24 @@
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: hsla(101, 65%, 60%, 1); /* green */
   line-height: 48px;
   display: inline;
+  padding-right: 5px;
 }
 
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999999;
+  color: #999999; /* light gray */
   line-height: 29px;
   padding: 10px;
 }
 
 h3 {
-  font-style: italic;
+  
   font-size: 20px;
-  color: #000000;
+  color: #999999; /* light gray */
   line-height: 22px;
   text-align: left;
 }
@@ -39,7 +40,7 @@ h3 {
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4A4A4A;
+  color: #4A4A4A; /* dark gray */
   line-height: 17px;
 }
 
@@ -53,7 +54,7 @@ h2, h3, h4, h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #999999; /* light gray */
   line-height: 16px;
   float: left;
 }
@@ -83,38 +84,38 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #F3F3F3;
+  color: white;
   line-height: 28px;
   margin-top: 5px;
   margin-bottom: 15px;
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: hsla(101, 65%, 60%, 1); /* green */
   display: none;
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: hsla(225, 30%, 95%, 1); /* light blue */
+  color: hsla(101, 65%, 60%, 1); /* green */
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: hsla(101, 65%, 60%, 1); /* green */
 }
 
 .white-text {
-  font-weight: bold;
-  color: #FFFFFF;
+  color: #999999; /* light gray */
 }
 
 .gray {
-  background-color: hsla(225, 30%, 95%, 1);
+  background-color: hsla(225, 30%, 95%, 1); /* light blue */
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
-  background-color: hsla(225, 60%, 20%, 1);
+  background-color: hsla(225, 60%, 20%, 1); /* blue */
 }
 
 /* TODO: Replace with image later */
@@ -130,6 +131,7 @@ a {
   justify-content: space-around;
   padding: 10px;
   padding-top: 0px;
+  padding-bottom: 20px;
 }
 
 .center-content {
@@ -145,7 +147,7 @@ ul {
 
 .biopic {
   float: left;
-  margin: 10px;
+  margin: 10px 15px 10px 0;
   width: 200px;
   display: none;
   border: 1px solid white;
@@ -247,7 +249,7 @@ span {
   margin-bottom: 50px;
 }
 
-#workExperience, #projects, #education, #mapDiv {
+#workExperience, #projects, #education, #online-education, #mapDiv {
   padding-top: 50px;
 }
 
@@ -270,3 +272,34 @@ span {
 .flex-item >a {
   margin-top: 0;
 }
+
+#footerContacts >.flex-item {
+  padding-top: 5px;
+}
+
+#footerContacts {
+  padding-bottom: 5px;
+}
+
+.role {
+  color: white;
+}
+
+.education-details {
+  margin-top: -15px;
+  padding: 0;
+  line-height: normal;
+}
+
+.education-details:nth-of-type(1) {
+  margin: 0;
+  padding: 0;
+}
+
+#skills {
+  padding-left: 0;
+}
+
+
+
+

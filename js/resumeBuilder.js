@@ -1,6 +1,6 @@
 
 var bio = {
-	"name": "Shanna Sullivan",
+	"name": "Shanna M. Sullivan",
 	"role": "Front-End Web Developer",
 	"contacts": {
 		"mobile": "925.984.1361",
