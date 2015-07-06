@@ -48,9 +48,11 @@ var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<p class=education-details><br>Major: %data%</p>';
+// added new variable for minors
 var HTMLschoolMinors = '<p class=education-details><br>Minors: %data%</p>';
 var HTMLschoolClasses = '<p class=education-details><br>Classes: %data%</p>';
 
+// changed variable name from HTMLonlineClasses to HTMLonlineEducation
 var HTMLonlineEducation = '<div class="online-education-entry"></div>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
@@ -143,6 +145,13 @@ function initializeMap() {
     return locations;
   }
 
+  // infoWindows are the little helper windows that open when you click
+  // or hover over a pin on a map. They usually contain more information
+  // about a location.
+  // moved this variable outside of the function scope so that each infoWindow
+  // closes when the next infoWindow is clicked.
+  var infoWindow;
+
   /*
   createMapMarker(placeData) reads Google Places search results to create map pins.
   placeData is the object returned from search results containing information
@@ -163,17 +172,14 @@ function initializeMap() {
       title: name
     });
 
-    // infoWindows are the little helper windows that open when you click
-    // or hover over a pin on a map. They usually contain more information
-    // about a location.
-    var infoWindow = new google.maps.InfoWindow({
-      content: name
-    });
+    
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
-      infoWindow.open(map, marker);
+      if (infoWindow) infoWindow.close();
+      infoWindow = new google.maps.InfoWindow({content:"<p>" + name + "</p>"});
+      infoWindow.open(map, this);
     });
 
     // this is where the pin actually gets added to the map.
