@@ -95,12 +95,14 @@ a {
   display: none;
 }
 
-.orange {
+/* footer styling, changed .orange to .green-over-blue */
+.green-over-blue {
   background-color: hsla(225, 30%, 95%, 1); /* light blue */
   color: hsla(101, 65%, 60%, 1); /* green */
 }
 
-.orange-text {
+/* changed .orange-text to .green-text */
+.green-text {
   color: hsla(101, 65%, 60%, 1); /* green */
 }
 
@@ -108,13 +110,15 @@ a {
   color: #999999; /* light gray */
 }
 
-.gray {
+/* changed .gray to .light-blue*/
+.light-blue {
   background-color: hsla(225, 30%, 95%, 1); /* light blue */
   padding-bottom: 10px;
   clear:both;
 }
 
-.dark-gray {
+/*changed .dark-gray to .dark-blue*/
+.dark-blue {
   background-color: hsla(225, 60%, 20%, 1); /* blue */
 }
 
@@ -123,6 +127,7 @@ a {
   background-color: hsla(225, 60%, 20%, 1);
 }
 
+/* applied to header and footer ul*/
 .flex-box {
   display: -webkit-flex;
   display: flex;
@@ -134,6 +139,7 @@ a {
   padding-bottom: 20px;
 }
 
+/* applied to header */
 .center-content {
   padding-top: 2.5%;
   padding-left: 5%;
@@ -225,30 +231,8 @@ span {
     display: block;
   }
 }
-/*
-.columns-for-images {
-  width: 49%;
-  display: inline-block;
-  margin: .25% 1% .25% 0%;
-  max-width: 500px;
-}
-*/
-/*
-.columns-for-images {
-  width: 50%;
-  display: inline-block;
-  margin: 0px;
-  padding: 5px;
-  max-width: 500px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
-.columns-for-images:nth-of-type(4) {
-  margin-bottom: 50px;
-}
-*/
+/* make more space between sections */
 #workExperience, #projects, #education, #online-education, #mapDiv {
   padding-top: 50px;
 }
@@ -257,10 +241,12 @@ span {
   margin-top: 0;
 }
 
+/* make more space between entries */
 .education-entry, .work-entry {
   margin-top: 20px;
 }
 
+/* make less space between first entry and entry title */
 .education-entry:nth-of-type(1), .work-entry:nth-of-type(1) {
   margin-top: 10px;
 }
@@ -269,6 +255,7 @@ span {
   padding: 0;
 }
 
+/* applied to header contacts */
 .flex-item >a {
   margin-top: 0;
 }
@@ -285,6 +272,11 @@ span {
   color: white;
 }
 
+#skills {
+  padding-left: 0;
+}
+
+/* education formatting */
 .education-details {
   margin-top: -15px;
   padding: 0;
@@ -296,10 +288,8 @@ span {
   padding: 0;
 }
 
-#skills {
-  padding-left: 0;
-}
-
+/* project formatting */
+/* make 2 images per row and have edges line up with edges of text - padding adds up to 5% each side total */
 .project-entry {
   padding-left: 4.4%;
   padding-right: 4.4%;
@@ -321,18 +311,7 @@ span {
   margin: 0;
 }
 
-/*
-.columns-for-images {
-  width: 50%;
-  display: inline-block;
-  margin: 0px;
-  padding: 5px;
-  max-width: 500px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*/
+/* make space between project entries */
 .columns-for-images:nth-of-type(4) {
   margin-bottom: 50px;
 }

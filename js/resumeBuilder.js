@@ -1,4 +1,4 @@
-
+// bio object
 var bio = {
 	"name": "Shanna M. Sullivan",
 	"role": "Front-End Web Developer",
@@ -14,93 +14,62 @@ var bio = {
 	"bioPic": "images/headshot.jpg"
 }
 
-function prependToHeader(what, how) {
-	$("#header").prepend(how.replace("%data%", what));
-}
+// append bio to resume
+bio.display = function() {
 
-function appendToResume(what, how, where) {
-	$(where).append(how.replace("%data%", what));
-}
+	// general function to prepend bio to header
+	function prependToHeader(what, how) {
+		$("#header").prepend(how.replace("%data%", what));
+	}
 
-prependToHeader(bio.role, HTMLheaderRole);
-prependToHeader(bio.name, HTMLheaderName);
-appendToResume(bio.contacts.mobile, HTMLmobile, "#topContacts");
-appendToResume(bio.contacts.email, HTMLemail, "#topContacts");
+	//general function to append bio to resume
+	function appendToResume(what, how, where) {
+		$(where).append(how.replace("%data%", what));
+	}
 
-//appendToResume(bio.contacts.github, HTMLgithub, "#topContacts");
-function displayLink() {
-	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github).replace("#", bio.contacts.githubURL);
+	// call functions to append bio to header and topContacts
+	prependToHeader(bio.role, HTMLheaderRole);
+	prependToHeader(bio.name, HTMLheaderName);
+	appendToResume(bio.contacts.mobile, HTMLmobile, "#topContacts");
+	appendToResume(bio.contacts.email, HTMLemail, "#topContacts");
 
-	$("#topContacts").append(formattedGithub);
-}
+	// add link to github and append to topContacts
+	function displayLink() {
+		var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github).replace("#", bio.contacts.githubURL);
 
-displayLink();
+		$("#topContacts").append(formattedGithub);
+	}
 
-appendToResume(bio.contacts.location, HTMLlocation, "#topContacts");
-appendToResume(bio.bioPic, HTMLbioPic, "#header");
-appendToResume(bio.welcomeMsg, HTMLwelcomeMsg, "#header");
+	displayLink();
 
-function appendToFooter(what, how, where) {
-	$("#footerContacts").append(how.replace("%data%", what));
-}
-
-appendToFooter(bio.contacts.mobile, HTMLmobile);
-appendToFooter(bio.contacts.email, HTMLemail);
-appendToFooter(bio.contacts.github, HTMLgithub);
-appendToFooter(bio.contacts.location, HTMLlocation);
-
-/*
-$("#header").append(HTMLskillsStart);
-appendToResume(bio.skills, HTMLskills, "#skills");
-*/
-
-//add name and role to header
-/*
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formattedRole);
-
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").prepend(formattedName);
-
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(formattedMobile);
-
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(formattedEmail);
-
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").append(formattedGithub);
-
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedLocation);
-
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-$("#header").append(formattedWelcomeMsg);
-
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-$("#header").append(formattedBioPic);
-*/
+	// call the remaining functions to append bio to header and topContacts
+	appendToResume(bio.contacts.location, HTMLlocation, "#topContacts");
+	appendToResume(bio.bioPic, HTMLbioPic, "#header");
+	appendToResume(bio.welcomeMsg, HTMLwelcomeMsg, "#header");
 
 
-if(bio.skills.length > 0) {
+	// append bio info to footer
+	function appendToFooter(what, how, where) {
+		$("#footerContacts").append(how.replace("%data%", what));
+	}
 
-	$("#header").append(HTMLskillsStart);
-	appendToResume(bio.skills, HTMLskills, "#skills");
-/*
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-*/
-}
+	appendToFooter(bio.contacts.mobile, HTMLmobile);
+	appendToFooter(bio.contacts.email, HTMLemail);
+	appendToFooter(bio.contacts.github, HTMLgithub);
+	appendToFooter(bio.contacts.location, HTMLlocation);
 
+	// check if length of skills array is more than 0
+	if(bio.skills.length > 0) {
 
+		// append skills to header
+		$("#header").append(HTMLskillsStart);
+		appendToResume(bio.skills, HTMLskills, "#skills");
+	}
+} 
 
+bio.display(); // end append bio info to resume
+
+// work object
 var work = {
 	"jobs": [
 	{
@@ -129,10 +98,13 @@ var work = {
 	}]
 }
 
-function displayWork() {
+// append work info to resume
+work.display = function() {
 	for(job in work.jobs) {
+	
 	// create a new div for work experience
 	$("#workExperience").append(HTMLworkStart);
+	
 	//concat employer and title
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer).replace("#", work.jobs[job].employerURL);
 	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -148,16 +120,9 @@ function displayWork() {
 	}
 }
 
-displayWork();
+work.display(); // end append work info to resume
 
-$(document).click(function(loc) {
-	var x = loc.pageX;
-	var y = loc.pageY;
-
-	logClicks(x, y)
-	}
-);
-
+// education object
 var education = {
 	"schools": [
 	{
@@ -197,20 +162,24 @@ var education = {
 	]
 }
 
-function displayEducation() {
+//append education info to resume
+education.display = function() {
 	for(school in education.schools) {
-	// create a new div for work experience
+	
+		// create a new div for education
 		$("#education").append(HTMLschoolStart);
-		//concat employer and title
 		
+		// check if degree exists
 		if(typeof education.schools[school].degree != "undefined") {
-
+			
+			// concat school name and degree if they exist
 			var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name).replace("#", education.schools[school].url);
 			var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 			var formattedSchoolNameDegree = formattedSchoolName + formattedSchoolDegree;
 		
 			$(".education-entry:last").append(formattedSchoolNameDegree);
 
+		// if degree doesn't exist, append school name without degree
 		} else {
 			var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name).replace("#", education.schools[school].url);
 			$(".education-entry:last").append(formattedSchoolName);
@@ -222,32 +191,43 @@ function displayEducation() {
 		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 		$(".education-entry:last").append(formattedSchoolLocation);
 		
+		// check if school major exists
 		if(typeof education.schools[school].major != "undefined") {
 
+			//append school major if it exists
 			var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
 			$(".education-entry:last").append(formattedSchoolMajor);
 		}
 
+		// check if school minors exist
 		if(typeof education.schools[school].minors != "undefined") {
 
+			// append school minors if they exist
 			var formattedSchoolMinors = HTMLschoolMinors.replace("%data%", education.schools[school].minors);
 			$(".education-entry:last").append(formattedSchoolMinors);
 		}
 
+		// check if school classes exist
 		if(typeof education.schools[school].classes != "undefined") {
 
+			// append school classes if they exist
 			var formattedSchoolClasses = HTMLschoolClasses.replace("%data%", education.schools[school].classes);
 			$(".education-entry:last").append(formattedSchoolClasses);
 		}
 	}
 
+	// append online education to resume
 	for(onlineCourse in education.onlineEducation) {
+		
+		// create new div for online education
 		$("#online-education").append(HTMLonlineEducation);
 
+		// concat online program and school and add links to them
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineEducation[onlineCourse].title).replace("#", education.onlineEducation[onlineCourse].schoolURL);
 		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineEducation[onlineCourse].school);
 		var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
 
+		// append online program and school with links to resume
 		$(".online-education-entry:last").append(formattedOnlineTitleSchool);
 
 		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineEducation[onlineCourse].dates);
@@ -256,12 +236,11 @@ function displayEducation() {
 		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineEducation[onlineCourse].urlTitle).replace("#", education.onlineEducation[onlineCourse].url);
 		$(".online-education-entry:last").append(formattedOnlineURL);
 	}
-
-
 }
 
-displayEducation();
+education.display(); // end append education info to resume
 
+// projects object
 var projects = {
 	"projects": [
 	{
@@ -303,31 +282,45 @@ var projects = {
 	]
 }
 
+//append projects to resume
 projects.display = function() {
 	for (project in projects.projects) {
-	$("#projects").append(HTMLprojectStart);
 
-	var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title).replace("#", projects.projects[project].url);
-	$(".project-entry:last").append(formattedTitle);
-	
-	var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-	$(".project-entry:last").append(formattedDates);
+		// create new div for projects
+		$("#projects").append(HTMLprojectStart);
 
-	var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-	$(".project-entry:last").append(formattedDescription);
-	
-	if (projects.projects[project].images.length > 0) {
-		for (image in projects.projects[project].images) {
-			var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-			$(".project-entry:last").append(formattedProjectImage);
+		// append project info to resume
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title).replace("#", projects.projects[project].url);
+		$(".project-entry:last").append(formattedTitle);
+		
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);
+		
+		// check if there are images
+		if (projects.projects[project].images.length > 0) {
+
+			// append images to resume if they exist
+			for (image in projects.projects[project].images) {
+				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+				$(".project-entry:last").append(formattedProjectImage);
+			}
 		}
-	}
-	
 	}
 }
 
-projects.display();
+projects.display(); //end append project info to resume
 
+// log clicks
+$(document).click(function(loc) {
+	var x = loc.pageX;
+	var y = loc.pageY;
+
+	logClicks(x, y)
+	}
+);
 
 //create international resume versions
 function inName() {
@@ -343,7 +336,7 @@ function inName() {
 
  $("#main").append(internationalizeButton);
 
-//map
+// append map to resume
 $("#mapDiv").append(googleMap);
 
 
