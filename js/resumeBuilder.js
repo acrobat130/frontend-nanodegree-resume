@@ -339,6 +339,51 @@ function inName() {
 // append map to resume
 $("#mapDiv").append(googleMap);
 
+// toggle each resume section
+/*
+$(document).ready(function(){
+	// when toggle class is clicked, run this function
+	$(".toggle").click(function(){
+		// show or hide collapsible content
+		// get selector
+		var toggleSelector = $(this).attr('href');
+		//toggle display and hide
+		var toggleSwitch = $(this);
+		$(toggleSelector).toggle("slow");
+	});
+});
+*/
+
+/*
+$(document).ready(function(){
+	$(".toggle").click(function(){
+		$(".toggle>*").toggle("slow");
+	});
+});
+*/
+
+
+$(document).ready(function(){
+	
+	//$(".work-entry, .project-entry, .education-entry, #online-education").hide();
+	
+	$(".toggle").click(function() {
+		// $(".work-entry, .project-entry, .education-entry, #online-education").slideUp("fast");
+		$(".work-entry, .project-entry, .education-entry, #online-education", this).slideToggle();
+	});
+
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 
