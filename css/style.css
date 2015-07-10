@@ -152,8 +152,18 @@ a {
   padding-bottom: 2.5%
 }
 
-ul {
+ul, li {
   list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+/* add vertical lines and spaces between skills */
+
+#skills >li {
+  padding-right: 10px;
 }
 
 .biopic {
@@ -258,6 +268,7 @@ span {
 }
 
 .no-padding {
+  text-align: justify;
   padding: 0;
 }
 
@@ -348,6 +359,7 @@ svg {
   padding-top: 60px;
 }
 
+/* styling for headings that toggle */
 /* make each section hidden by default unless toggled */
 /*
 .toggle >*:not(:first-child) {

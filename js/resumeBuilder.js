@@ -12,7 +12,7 @@ var bio = {
 		"location": "San Jose, CA"
 	},
 	"welcomeMsg": "Professionally, I am a designer at heart. I think in pictures. I am a passionate, goal-oriented person who is always looking for a challenge. I would love to work with you.",
-	"skills": ["Adobe Creative Suite: Photoshop, InDesign, Illustrator, Acrobat", " JavaScript", " HTML", " CSS", " Visual Design", " UX Design", " AutoCAD", " Rhino", " SketchUp", " Revit", " Drafting", " Model Building", " Logic Express", " Final Cut Pro", " Pages", " Keynote", " Word", " Excel", " Powerpoint", " Windows and Mac platforms", " Acoustical testing and measurements", " Choreography"],
+	"skills": ["JavaScript", "|", "HTML", "|", "CSS", "|", "Visual Design", "|", "UX Design"],
 	"bioPic": "images/headshot.jpg"
 }
 
@@ -23,7 +23,6 @@ bio.display = function() {
 	function prependToHeader(what, how) {
 		$("#header").prepend(how.replace("%data%", what));
 	}
-
 	//general function to append bio to resume
 	function appendToResume(what, how, where) {
 		$(where).append(how.replace("%data%", what));
@@ -34,7 +33,6 @@ bio.display = function() {
 	prependToHeader(bio.name, HTMLheaderName);
 	appendToResume(bio.contacts.mobile, HTMLmobile, "#topContacts");
 	appendToResume(bio.contacts.email, HTMLemail, "#topContacts");
-
 	// call the remaining functions to append bio to header and topContacts
 	appendToResume(bio.bioPic, HTMLbioPic, "#header");
 	appendToResume(bio.welcomeMsg, HTMLwelcomeMsg, "#header");
@@ -44,39 +42,43 @@ bio.display = function() {
 	function appendToFooter(what, how, where) {
 		$("#footerContacts").append(how.replace("%data%", what));
 	}
-
 	appendToFooter(bio.contacts.mobile, HTMLmobile);
 	appendToFooter(bio.contacts.email, HTMLemail);
 	
 	// add link to github and append to topContacts and footer
 	function displayGithubLink() {
 		var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github).replace("#", bio.contacts.githubURL);
-
 		$("#topContacts").append(formattedGithub);
 		$("#footerContacts").append(formattedGithub);
 	}
-
 	displayGithubLink();
 
 	// add link to website and append to topContacts and footer
 	function displayWebsiteLink() {
 		var formattedWebsite = HTMLwebsite.replace("%data%", bio.contacts.website).replace("#", bio.contacts.websiteURL);
-
 		$("#topContacts").append(formattedWebsite);
 		$("#footerContacts").append(formattedWebsite);
 	}
-
 	displayWebsiteLink();
 
 	// check if length of skills array is more than 0
 	if(bio.skills.length > 0) {
-
 		// append skills to header
 		$("#header").append(HTMLskillsStart);
-		appendToResume(bio.skills, HTMLskills, "#skills");
-	}
-} 
+		//appendToResume(bio.skills, HTMLskills, "#skills");
+		//bio.skills.each(function(i, value){
+			//var formattedSkills = HTMLSkills.replace("%data%", value);
+			//$("#skills").append(formatedSkills);
 
+		//});
+		for (skill in bio.skills) {
+			var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
+			$("#skills").append(formattedSkills);
+		
+
+		} 
+	}
+};
 bio.display(); // end append bio info to resume
 
 // work object
@@ -165,7 +167,7 @@ var education = {
 		"schoolURL": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001",
 		"school": "Udacity",
 		"dates": 2015,
-		"courses": ["Intro to Computer Science", "Intro to HTML and CSS", "How to Use Git and GitHub","JavaScript Basics", "Intro to jQuery", "Object-Oriented JavaScript", "HTML5 Canvas", "Website Performance Optimization", "Browser Rendering Optimization", "Intro to AJAX", "JavaScript Design Patterns", "JavaScript Testing"],
+		"courses": ["Intro to Computer Science", "Intro to HTML and CSS", "How to Use Git and GitHub", "JavaScript Basics", "Intro to jQuery", "Object-Oriented JavaScript", "HTML5 Canvas", "Website Performance Optimization", "Browser Rendering Optimization", "Intro to AJAX", "JavaScript Design Patterns", "JavaScript Testing"],
 		"urlTitle": "www.udacity.com",
 		"url": "https://www.udacity.com"
 	}
