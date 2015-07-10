@@ -340,36 +340,23 @@ function inName() {
 $("#mapDiv").append(googleMap);
 
 // toggle each resume section
-/*
 $(document).ready(function(){
+	/*
+	// calculate the height of each div so that animation doesn't jump at the end
+	// still jumps with this, need to fix
+	$(".toggle").find("*").each(function() {
+		$height = $(this).height();
+		$(this).css('height', $height);
+	});
+	*/
+
+	// hide collapsible content to start
+	$(".work-entry, .project-entry, .education-entry, #online-education").hide();
+	
 	// when toggle class is clicked, run this function
-	$(".toggle").click(function(){
-		// show or hide collapsible content
-		// get selector
-		var toggleSelector = $(this).attr('href');
-		//toggle display and hide
-		var toggleSwitch = $(this);
-		$(toggleSelector).toggle("slow");
-	});
-});
-*/
-
-/*
-$(document).ready(function(){
-	$(".toggle").click(function(){
-		$(".toggle>*").toggle("slow");
-	});
-});
-*/
-
-
-$(document).ready(function(){
-	
-	//$(".work-entry, .project-entry, .education-entry, #online-education").hide();
-	
 	$(".toggle").click(function() {
-		// $(".work-entry, .project-entry, .education-entry, #online-education").slideUp("fast");
-		$(".work-entry, .project-entry, .education-entry, #online-education", this).slideToggle();
+		// show or hide collapsible content
+		$(this).children(".toggle >*:not(:first-child)").slideToggle("slow");
 	});
 
 });

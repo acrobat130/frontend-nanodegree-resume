@@ -341,11 +341,11 @@ span {
 }
 
 /* make each section hidden by default unless toggled */
-
+/*
 .toggle >*:not(:first-child) {
   display: none;
 }
-
+*/
 .toggle >h2:nth-of-type(1){
   cursor: pointer;
 }
