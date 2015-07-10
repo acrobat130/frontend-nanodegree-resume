@@ -102,7 +102,7 @@ a {
 
 /* footer styling, changed .orange to .green-over-blue */
 .green-over-blue {
-  background-color: hsla(225, 30%, 95%, 1); /* light blue */
+  background-color: white;
   color: hsla(101, 65%, 60%, 1); /* green */
 }
 
@@ -227,7 +227,8 @@ span {
 #mapDiv {
   height: 400px;
   width: 100%;
-  padding-bottom: 5%;
+  padding-bottom: 80px;
+  margin-bottom: 0px;
 }
 
 @media only screen and (min-width: 750px) {
@@ -238,7 +239,7 @@ span {
 }
 
 /* make more space between sections */
-#workExperience, #projects, #education, #online-education, #mapDiv {
+#workExperience, #projects, #education, #online-education, #skillDiagram, #mapDiv {
   padding-top: 50px;
 }
 
@@ -322,22 +323,29 @@ span {
   margin-bottom: 50px;
 }
 
-/* skills graphic styles for radial-reingold-tilford tree */
+/* skills diagram styles for radial-reingold-tilford tree */
 
 .node circle {
-  fill: #fff;
-  stroke: steelblue;
+  fill: hsla(101, 65%, 60%, 1);
+  stroke: hsla(225, 60%, 20%, 1);
   stroke-width: 1.5px;
 }
 
 .node {
-  font: 10px sans-serif;
+  font: 14px sans-serif;
 }
 
 .link {
   fill: none;
   stroke: #ccc;
-  stroke-width: 1.5px;
+  stroke-width: 1px;
+}
+
+/* center skills diagram */
+svg {
+  display: block;
+  margin: 0 auto;
+  padding-top: 60px;
 }
 
 /* make each section hidden by default unless toggled */
