@@ -358,3 +358,7 @@ svg {
   cursor: pointer;
 }
 
+.toggle >h2:nth-of-type(1):hover {
+  text-shadow: 1px 1px 1.5px black;
+}
+
