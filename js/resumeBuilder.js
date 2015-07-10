@@ -7,6 +7,8 @@ var bio = {
 		"email": "shanna.sullivan@gmail.com",
 		"github": "github.com/acrobat130",
 		"githubURL": "https://github.com/acrobat130",
+		"website": "shannamichelledesigns.com",
+		"websiteURL": "http://www.shannamichelledesigns.com",
 		"location": "San Jose, CA"
 	},
 	"welcomeMsg": "Professionally, I am a designer at heart. I think in pictures. I am a passionate, goal-oriented person who is always looking for a challenge. I would love to work with you.",
@@ -33,17 +35,7 @@ bio.display = function() {
 	appendToResume(bio.contacts.mobile, HTMLmobile, "#topContacts");
 	appendToResume(bio.contacts.email, HTMLemail, "#topContacts");
 
-	// add link to github and append to topContacts
-	function displayLink() {
-		var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github).replace("#", bio.contacts.githubURL);
-
-		$("#topContacts").append(formattedGithub);
-	}
-
-	displayLink();
-
 	// call the remaining functions to append bio to header and topContacts
-	appendToResume(bio.contacts.location, HTMLlocation, "#topContacts");
 	appendToResume(bio.bioPic, HTMLbioPic, "#header");
 	appendToResume(bio.welcomeMsg, HTMLwelcomeMsg, "#header");
 
@@ -55,8 +47,26 @@ bio.display = function() {
 
 	appendToFooter(bio.contacts.mobile, HTMLmobile);
 	appendToFooter(bio.contacts.email, HTMLemail);
-	appendToFooter(bio.contacts.github, HTMLgithub);
-	appendToFooter(bio.contacts.location, HTMLlocation);
+	
+	// add link to github and append to topContacts and footer
+	function displayGithubLink() {
+		var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github).replace("#", bio.contacts.githubURL);
+
+		$("#topContacts").append(formattedGithub);
+		$("#footerContacts").append(formattedGithub);
+	}
+
+	displayGithubLink();
+
+	// add link to website and append to topContacts and footer
+	function displayWebsiteLink() {
+		var formattedWebsite = HTMLwebsite.replace("%data%", bio.contacts.website).replace("#", bio.contacts.websiteURL);
+
+		$("#topContacts").append(formattedWebsite);
+		$("#footerContacts").append(formattedWebsite);
+	}
+
+	displayWebsiteLink();
 
 	// check if length of skills array is more than 0
 	if(bio.skills.length > 0) {
