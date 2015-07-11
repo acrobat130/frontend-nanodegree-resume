@@ -1,7 +1,7 @@
 * {
-  padding:0;
-  margin:0;
-  font-family: 'Lato', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
   font-weight: 300;
 }
 
@@ -9,7 +9,10 @@
   overflow: auto;
 }
 
-.education-entry, .work-entry, .online-education-entry, .project-images-entry {
+.education-entry,
+.work-entry,
+.online-education-entry,
+.project-images-entry {
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -26,7 +29,7 @@ h1 {
 h2 {
   font-weight: 900;
   font-size: 24px;
-  color: #999999; /* light gray */
+  color: rgb(153, 153, 153); /* light gray */
   line-height: 29px;
   padding: 10px;
 }
@@ -34,7 +37,7 @@ h2 {
 h3 {
   
   font-size: 20px;
-  color: #999999; /* light gray */
+  color: rgb(153, 153, 153); /* light gray */
   line-height: 22px;
   text-align: left;
 }
@@ -42,11 +45,14 @@ h3 {
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4A4A4A; /* dark gray */
+  color: rgb(74, 74, 74); /* dark gray */
   line-height: 17px;
 }
 
-h2, h3, h4, h5 {
+h2,
+h3,
+h4,
+h5 {
   padding:10px;
   padding-left: 5%;
   padding-right: 5%;
@@ -56,7 +62,7 @@ h2, h3, h4, h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999; /* light gray */
+  color: rgb(153, 153, 153); /* light gray */
   line-height: 16px;
   float: left;
 }
@@ -64,7 +70,7 @@ h2, h3, h4, h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: rgb(153, 153, 153);
   line-height: 16px;
   float: right;
 
@@ -94,7 +100,7 @@ a {
   font-weight: 300;
 }
 
-#skillsH3 {
+.skills-header {
   color: hsla(101, 65%, 60%, 1); /* green */
   display: none;
   font-weight: 400;
@@ -112,7 +118,7 @@ a {
 }
 
 .white-text {
-  color: #999999; /* light gray */
+  color: rgb(153, 153, 153); /* light gray */
 }
 
 /* changed .gray to .light-blue*/
@@ -128,7 +134,7 @@ a {
 }
 
 /* TODO: Replace with image later */
-#header {
+header {
   background-color: hsla(225, 60%, 20%, 1);
 }
 
@@ -140,7 +146,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
-  padding-top: 0px;
+  padding-top: 0;
   padding-bottom: 20px;
 }
 
@@ -152,7 +158,8 @@ a {
   padding-bottom: 2.5%
 }
 
-ul, li {
+ul,
+li {
   list-style-type: none;
 }
 
@@ -162,7 +169,7 @@ li {
 
 /* add space between skills */
 
-#skills >li {
+.skills-list >li {
   padding-right: 10px;
 }
 
@@ -184,7 +191,7 @@ img {
 /* Bar chart stuff */
 .chart div {
   font: 10px sans-serif;
-  background-color: #4A4A4A;
+  background-color: rgb(74, 74, 74);
   text-align: right;
   padding: 3px;
   margin: 1px;
@@ -197,12 +204,12 @@ span {
   padding: 5px;
 }
 
-#letsConnect {
+footer {
   text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {
-  #letsConnect {
+  footer {
     margin-top: 5%;
   }
 }
@@ -214,7 +221,7 @@ span {
 }
 
 @media only screen and (max-width: 750px) {
-  #letsConnect {
+  footer {
     margin-top: 10%;
   }
   .biopic {
@@ -227,29 +234,34 @@ span {
   */
 }
 
-#map {
+.map-style {
   display: block;
   height: 100%;
   margin-left: 5%;
   margin-right: 5%;
 }
 
-#mapDiv {
+.map-container {
   height: 400px;
   width: 100%;
   padding-bottom: 80px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 750px) {
-  #skillsH3,
+  .skills-header,
   .biopic {
     display: block;
   }
 }
 
 /* make more space between sections */
-#workExperience, #projects, #education, #online-education, #skillDiagram, #mapDiv {
+.work-experience-container,
+.projects-container,
+.education-container,
+.online-education-container,
+.skills-container,
+.map-container {
   padding-top: 50px;
 }
 
@@ -258,12 +270,14 @@ span {
 }
 
 /* make more space between entries */
-.education-entry, .work-entry {
+.education-entry,
+.work-entry {
   margin-top: 20px;
 }
 
 /* make less space between first entry and entry title */
-.education-entry:nth-of-type(1), .work-entry:nth-of-type(1) {
+.education-entry:nth-of-type(1),
+.work-entry:nth-of-type(1) {
   margin-top: 10px;
 }
 
@@ -277,11 +291,11 @@ span {
   margin-top: 0;
 }
 
-#footerContacts >.flex-item {
+.footer-contacts >.flex-item {
   padding-top: 5px;
 }
 
-#footerContacts {
+.footer-contacts {
   padding-bottom: 5px;
 }
 
@@ -290,7 +304,7 @@ span {
   font-weight: 300;
 }
 
-#skills {
+.skills-ul {
   padding-left: 0;
 }
 
@@ -313,9 +327,11 @@ span {
   padding-right: 4.4%;
 }
 
-.project-entry >a, .project-entry >.date-text, .project-entry>p {
-  padding-left: .6%;
-  padding-right: .6%;
+.project-entry >a,
+.project-entry >.date-text,
+.project-entry>p {
+  padding-left: 0.6%;
+  padding-right: 0.6%;
 }
 
 .project-entry >.columns-for-images {
@@ -325,7 +341,7 @@ span {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: .6%;
+  padding: 0.6%;
   margin: 0;
 }
 
@@ -371,6 +387,5 @@ svg {
 }
 
 .toggle >h2:nth-of-type(1):hover {
-  text-shadow: .5px .5px .5px black;
+  text-shadow: 0.5px 0.5px 0.5px black;
 }
-
