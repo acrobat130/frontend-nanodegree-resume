@@ -65,17 +65,9 @@ bio.display = function() {
 	if(bio.skills.length > 0) {
 		// append skills to header
 		$("#header").append(HTMLskillsStart);
-		//appendToResume(bio.skills, HTMLskills, "#skills");
-		//bio.skills.each(function(i, value){
-			//var formattedSkills = HTMLSkills.replace("%data%", value);
-			//$("#skills").append(formatedSkills);
-
-		//});
 		for (skill in bio.skills) {
 			var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
 			$("#skills").append(formattedSkills);
-		
-
 		} 
 	}
 };
@@ -407,11 +399,11 @@ $(window).resize(function(){
 
 // toggle each resume section
 $(document).ready(function(){
-	/*
+	
 	// calculate the height of each div so that animation doesn't jump at the end
 	// still jumps with this, need to fix
-	$(".toggle").find("*").each(function() {
-		$height = $(this).height();
+	/*$(".toggle").find("*").each(function() {
+		$height = $(this).outerHeight();
 		$(this).css('height', $height);
 	});
 	*/

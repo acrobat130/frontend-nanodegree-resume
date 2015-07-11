@@ -160,7 +160,7 @@ li {
   display: inline-block;
 }
 
-/* add vertical lines and spaces between skills */
+/* add space between skills */
 
 #skills >li {
   padding-right: 10px;
@@ -371,6 +371,6 @@ svg {
 }
 
 .toggle >h2:nth-of-type(1):hover {
-  text-shadow: 1px 1px 1.5px black;
+  text-shadow: .5px .5px .5px black;
 }
 
