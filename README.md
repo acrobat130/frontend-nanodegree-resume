@@ -1,4 +1,12 @@
-## How do I complete this project?
+## How do I view this application?
+
+1. Fork and clone this repository.
+2. To view the application, do one of the following:
+  * Open the `index.html` file in your Chrome browser.
+  * In your terminal, navigate to this repository and type `python -m SimpleHTTP Server`. In your Chrome browser, navigate to `localhost:8000`.
+
+### Original Project Instructions
+### How do I complete this project?
 
 1. Go to the [Javascript Basics course](https://www.udacity.com/course/ud804) and select "View Course Materials."
 2. Go through the videos and assignments in this course to learn the JavaScript necessary to build your resume.
